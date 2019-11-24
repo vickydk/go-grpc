@@ -2,17 +2,17 @@ package main
 
 import (
 	"context"
-	"fmt"
 	"crypto/tls"
 	"crypto/x509"
 	"flag"
+	"fmt"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials"
 	"io/ioutil"
 	"os"
 	"path/filepath"
-	"time"
 	h "self/go-grpc/pkg/utl/grpc"
+	"time"
 )
 
 const (

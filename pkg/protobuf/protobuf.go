@@ -6,6 +6,9 @@ import (
 	"flag"
 	"fmt"
 	"github.com/golang/glog"
+	hSvc "github.com/vickydk/go-grpc/pkg/protobuf/helloworld"
+	h "github.com/vickydk/go-grpc/pkg/utl/grpc"
+	"github.com/vickydk/go-grpc/pkg/utl/server"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials"
 	"google.golang.org/grpc/health"
@@ -13,11 +16,8 @@ import (
 	"google.golang.org/grpc/reflection"
 	"io/ioutil"
 	"net"
-	hSvc "self/go-grpc/pkg/protobuf/helloworld"
-	h "self/go-grpc/pkg/utl/grpc"
 	"os"
 	"path/filepath"
-	"self/go-grpc/pkg/utl/server"
 )
 
 func withConfigDir(path string) string {

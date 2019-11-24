@@ -2,7 +2,7 @@ package helloworld
 
 import (
 	"context"
-	h "self/go-grpc/pkg/utl/grpc"
+	h "github.com/vickydk/go-grpc/pkg/utl/grpc"
 )
 
 type grpcServer struct {

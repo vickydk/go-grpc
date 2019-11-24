@@ -1,11 +1,11 @@
 package server
 
 import (
+	"fmt"
+	"google.golang.org/grpc"
 	"net"
 	"os"
-	"fmt"
 	"os/signal"
-	"google.golang.org/grpc"
 )
 
 func StartGrpc(grpcServer *grpc.Server, lis net.Listener) {

@@ -2,7 +2,7 @@ package main
 
 import (
 	"github.com/golang/glog"
-	"self/go-grpc/pkg/protobuf"
+	"github.com/vickydk/go-grpc/pkg/protobuf"
 )
 
 func main() {
