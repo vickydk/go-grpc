@@ -21,14 +21,14 @@ import (
 )
 
 func withConfigDir(path string) string {
-	return filepath.Join(os.Getenv("GOPATH"), "src", "self", "go-rpc", path)
+	return filepath.Join(os.Getenv("GOPATH"), "src", "github.com", "vickydk", "go-grpc", path)
 }
 
 func Start() error {
 	var (
-		caCert          = flag.String("ca-cert", withConfigDir("ca.pem"), "Trusted CA certificate.")
-		tlsCert         = flag.String("tls-cert", withConfigDir("oms.pem"), "TLS server certificate.")
-		tlsKey          = flag.String("tls-key", withConfigDir("oms-key.pem"), "TLS server key.")
+		caCert  = flag.String("ca-cert", withConfigDir("./ca.pem"), "Trusted CA certificate.")
+		tlsCert = flag.String("tls-cert", withConfigDir("./oms.pem"), "TLS server certificate.")
+		tlsKey  = flag.String("tls-key", withConfigDir("./oms-key.pem"), "TLS server key.")
 	)
 	flag.Parse()
 
@@ -46,11 +46,11 @@ func Start() error {
 
 	cert, err := tls.LoadX509KeyPair(*tlsCert, *tlsKey)
 	if err != nil {
-		fmt.Println("err: ",err)
+		fmt.Println("err: ", err)
 	}
 	rawCaCert, err := ioutil.ReadFile(*caCert)
 	if err != nil {
-		fmt.Println("err: ",err)
+		fmt.Println("err: ", err)
 	}
 	caCertPool := x509.NewCertPool()
 	caCertPool.AppendCertsFromPEM(rawCaCert)
